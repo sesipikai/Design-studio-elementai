@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.investicijosmulti"
+	title="Investicijosmulti"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Investicijosmulti"
+		title="Investicijosmulti"
+		icon="res/bulletchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<jsInclude>res/js/investicijosmulti.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="setfaktas"
+			title="Faktas"
+			type="float"
+			bindable="true"/>
+		<property
+			id="setbiudzetas"
+			title="Biudžetas"
+			type="float"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="setfaktas">1000</defaultValue>
+			<defaultValue property="setbiudzetas">2000</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

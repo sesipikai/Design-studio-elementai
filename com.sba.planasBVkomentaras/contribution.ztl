@@ -1,0 +1,53 @@
+class com.sba.bvkomentaras.BVkomentaras extends Component {
+		
+	/* Sets YYYYMM  */
+	void setyyyymm(/* Sets YYYYMM */ String text) {*
+		this.menesis = text;
+	*}
+	
+		/* Sets plant */
+	void setplant(/* Sets plant */ String text) {*
+		this.plant = text;
+	*}
+	
+		/* Sets grupe */
+	void setgrupe(/* Sets plant */ String text) {*
+		this.grupe = text;
+	*}
+	
+		/* Sets spalva */
+	void setspalva(/* Sets plant */ String text) {*
+		this.spalva = text;
+	*}
+	
+		/* Sets artikulas */
+	void setartikulas(/* Sets plant */ String text) {*
+		this.artikulas = text;
+	*}
+	
+		/* Sets material  */
+	void setmaterial(/* Sets material */ String text) {*
+		this.material = text;
+	*}
+	
+		/* Sets kp  */
+	void setkp(/* Sets kp */ String text) {*
+		this.kp = text;
+	*}
+	
+		/* Sets kg  */
+	void setkg(/* Sets kg */ String text) {*
+		this.kg = text;
+	*}
+	
+		/*Runs update  */
+	void issaugotikomentara(/* Kuri funkcija */ float number) {*
+		this.triggerv = number;
+	*}
+	
+	
+	
+	
+		
+   
+}

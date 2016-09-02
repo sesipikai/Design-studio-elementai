@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.blank"
+	title="blank"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Blank"
+		title="blank"
+		icon="res/barchart.png"
+		handlerType="div"
+		modes="commons m"
+		databound="true">
+		<requireJs modes="commons m">res/js/blank</requireJs>
+		<requireJs modes="commons m">res/js/common_databound</requireJs>
+		<requireJs modes="commons m">res/js/tip</requireJs>
+		<stdInclude kind="d3"/>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="css"
+			title="CSS Style"
+			type="String"
+			bindable="true"/>
+		<property
+			id="xoffsetmanualleft"
+			title="X Offset: left"
+			type="float"
+			bindable="true"/>
+		<property
+			id="xoffsetmanualright"
+			title="X Offset: right"
+			type="float"
+			bindable="true"/>
+		<property
+			id="yoffsetmanualtop"
+			title="Y Offset: top"
+			type="float"
+			bindable="true"/>	
+		<property
+			id="yoffsetmanualbottom"
+			title="Y Offset: bottom"
+			type="float"
+			bindable="true"/>
+		<property
+			id="charttitlevisible"
+			title="Chart title: Visible"
+			type="boolean"/>
+		<property
+			id="charttitle"
+			title="Chart title:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="charttitlecss"
+			title="Chart title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="d3xaxisformat"
+			title="Axis: X Axis format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="labelcss"
+			title="Label: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsvisible"
+			title="Data labels: Visible"
+			type="boolean"/>
+		<property
+			id="datalabelscss"
+			title="Label: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsformat"
+			title="Label: Num. format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsscaling"
+			title="Label: scaling"
+			type="float"
+			bindable="true"/>
+		<property
+			id="datalabelssuffix"
+			title="Label: suffix"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsize"
+			title="Data label size px"
+			type="float"
+			bindable="true"/>
+		<property
+			id="datalabelsxOffset"
+			title="Label: Xoffset"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssback"
+			title="Bars: Back CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssfront"
+			title="Bars: Front CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="showbubbles"
+			title="Bubbles: on/off"
+			type="boolean"/>
+		<property
+			id="axissize"
+			title="Axis height pixels"
+			type="float"
+			bindable="true"/>
+		<property
+			id="yaxisfontsize"
+			title="Y Axis font size pixels"
+			type="float"
+			bindable="true"/>
+		<property
+			id="showbubbleslabels"
+			title="Bubble labels"
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="alertap"
+			title="Bubble alerts (A/P)"
+			type="String"
+			bindable="true"/>
+		<property
+			id="bubblefillgreen"
+			title="Bubble alerts green value >="
+			type="float"
+			bindable="true"/>
+		<property
+			id="bubblefillyellow"
+			title="Bubble alerts yellow value >="
+			type="float"
+			bindable="true"/>		
+		<property
+			id="fillred"
+			title="Alert fill: RED"
+			type="String"
+			bindable="true"/>
+		<property
+			id="fillgreen"
+			title="Alert fill: GREEN"
+			type="String"
+			bindable="true"/>
+		<property
+			id="fillyellow"
+			title="Alert fill: YELLOW"
+			type="String"
+			bindable="true"/>
+		<property
+			id="tooltipfaktas"
+			title="Tooltip: faktas"
+			type="String"
+			bindable="true"/>
+		<property
+			id="tooltipplanas"
+			title="Tooltip: planas"
+			type="String"
+			bindable="true"/>
+		<property
+			id="tooltipnumber"
+			title="Tooltip: number format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="tooltipproc"
+			title="Tooltip: proc format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">500</defaultValue>
+			<defaultValue property="HEIGHT">500</defaultValue>
+			<defaultValue property="css">stroke:steelblue;stroke-width:1;fill:none;</defaultValue>
+			<defaultValue property="charttitlevisible">false</defaultValue>
+			<defaultValue property="charttitle">Barchart</defaultValue>
+			<defaultValue property="charttitlecss"></defaultValue>
+			<defaultValue property="labelcss"></defaultValue>
+			<defaultValue property="datalabelsvisible">false</defaultValue>
+			<defaultValue property="datalabelscss"></defaultValue>
+			<defaultValue property="datalabelsscaling">1</defaultValue>
+			<defaultValue property="datalabelsformat">,.0f</defaultValue>
+			<defaultValue property="datalabelssuffix"></defaultValue>
+			<defaultValue property="datalabelsxOffset">0.35em</defaultValue>
+			<defaultValue property="barscssfront">fill:rgb(53,126,161)</defaultValue>
+			<defaultValue property="barscssback">fill:rgb(200,200,200)</defaultValue>
+			<defaultValue property="d3xaxisformat">.2s</defaultValue>
+			<defaultValue property="xoffsetmanualleft">0</defaultValue>
+			<defaultValue property="xoffsetmanualright">5</defaultValue>
+			<defaultValue property="yoffsetmanualtop">0</defaultValue>
+			<defaultValue property="yoffsetmanualbottom">0</defaultValue>
+			<defaultValue property="showbubbles">false</defaultValue>
+			<defaultValue property="showbubbleslabels">false</defaultValue>
+			<defaultValue property="axissize">20</defaultValue>
+			<defaultValue property="yaxisfontsize">11</defaultValue>
+			<defaultValue property="alertap">P</defaultValue>
+			<defaultValue property="bubblefillgreen">1</defaultValue>
+			<defaultValue property="bubblefillyellow">0.9</defaultValue>
+			<defaultValue property="fillred">rgb(246,172,165)</defaultValue>
+			<defaultValue property="fillyellow">rgb(230,229,36)</defaultValue>
+			<defaultValue property="fillgreen">rgb(103,185,75)</defaultValue>
+			<defaultValue property="datalabelsize">11</defaultValue>
+			<defaultValue property="tooltipfaktas">Faktas</defaultValue>
+			<defaultValue property="tooltipplanas">Planas</defaultValue>
+			<defaultValue property="tooltipnumber">,.0f</defaultValue>
+			<defaultValue property="tooltipproc">%</defaultValue>			
+			
+		</initialization>
+	</component>
+</sdkExtension>

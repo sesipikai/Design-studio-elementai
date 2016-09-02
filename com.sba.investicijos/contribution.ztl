@@ -1,0 +1,13 @@
+class com.sba.investicijos.Investicijos extends Component {
+		
+	/* Sets the Chart title. */
+	void setfaktas(/* Faktas float */ float skaicius) {*
+		this.setfaktas = skaicius;
+	*}	
+	
+		/* Sets the Chart title. */
+	void setbiudzetas(/* Biudzetas float */ float skaicius) {*
+		this.setbiudzetas = skaicius;
+	*}		
+   
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.investicijos"
+	title="Investicijos"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Investicijos"
+		title="Investicijos"
+		icon="res/bulletchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/investicijos.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="setfaktas"
+			title="Faktas"
+			type="float"
+			bindable="true"/>
+		<property
+			id="setbiudzetas"
+			title="Biudžetas"
+			type="float"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="setfaktas">1000</defaultValue>
+			<defaultValue property="setbiudzetas">2000</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

@@ -1,0 +1,114 @@
+class com.sba.blank.Blank extends Component {
+	
+	/* Sets the Chart title. */
+	void setcharttitle(/* Header text */ String text) {*
+		this.charttitle = text;
+	*}
+	
+	/* Sets X axis format */
+	void setxaxisformat(/* D3 Format */ String text) {*
+		this.d3xaxisformat = text;
+	*}
+	
+	/* Sets data labels format */
+	void setdatalabelsformat(/* D3 Format */ String text) {*
+		this.datalabelsformat = text;
+	*}
+	
+	/* Sets data labels sufix */
+	void setdatalabelssuffix(/* Suffix */ String text) {*
+		this.datalabelssuffix = text;
+	*}
+	
+	/* Sets data labels scalling */
+	void setdatalabelsscaling(/* Scalling factor */ float number) {*
+		this.datalabelsscaling = number;
+	*}
+	
+	/* Sets data labels visibility */
+	void setdatalabelsvisible(/* On/Off */ boolean value) {*
+		this.datalabelsvisible = value;
+	*}
+	
+	/* Sets front bar css */
+	void setbarscssfront(/* Front CSS */ String text) {*
+		this.barscssfront = text;
+	*}
+	
+	/* Sets back bar css */
+	void setbarscssback(/* Back CSS */ String text) {*
+		this.barscssback = text;
+	*}
+	
+	/* Sets bubble visibility */
+	void setshowbubbles(/* On/Off */ boolean value) {*
+		this.showbubbles = value;
+	*}
+	
+	/* Sets bubble label visibility */
+	void setshowbubbleslabels(/* On/Off */ boolean value) {*
+		this.showbubbleslabels = value;
+	*}
+	
+	/* Sets alert type  */
+	void setalertap(/* Alert TYPE: A/P */ String text) {*
+		this.alertap = text;
+	*}
+	
+	/* Sets alert red  */
+	void setfillred(/* Alert color: red */ String text) {*
+		this.fillred = text;
+	*}
+	
+	/* Sets alert green  */
+	void setfillgreen(/* Alert color: green */ String text) {*
+		this.fillgreen = text;
+	*}
+	
+	/* Sets alert yellow  */
+	void setfillyellow(/* Alert color: yellow */ String text) {*
+		this.fillyellow = text;
+	*}
+	
+	/* Sets alert value green  */
+	void setbubblefillgreen(/* Alert value: green */ float number) {*
+		this.bubblefillgreen = number;
+	*}
+	
+	/* Sets alert value yellow  */
+	void setbubblefillyellow(/* Alert value: yellow */ float number) {*
+		this.bubblefillyellow = number;
+	*}
+	
+	/* Sets data label size in pixels  */
+	void setdatalabelsize(/* Data label size in pixels */ float number) {*
+		this.datalabelsize = number;
+	*}
+	
+    /* Sets Tooltip faktas  */
+	void settooltipfaktas(/* Tooltip: faktas */ String text) {*
+		this.tooltipfaktas = text;
+	*}
+	
+	/* Sets Tooltip planas  */
+	void settooltipplanas(/* Tooltip: planas */ String text) {*
+		this.tooltipplanas = text;
+	*}
+	
+	/* Sets Tooltip number format  */
+	void settooltipnumber(/* Tooltip: number format */ String text) {*
+		this.tooltipnumber = text;
+	*}
+	
+	/* Sets Tooltip proc format  */
+	void settooltipproc(/* Tooltip: proc format */ String text) {*
+		this.tooltipproc = text;
+	*}
+	
+	
+	
+	
+	
+		
+   
+}

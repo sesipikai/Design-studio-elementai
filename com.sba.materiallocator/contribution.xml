@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.materiallocator"
+	title="Material Locator"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Materiallocator"
+		title="Materiallocator"
+		icon="res/materiallocator.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<jsInclude>res/js/materiallocator.js</jsInclude>
+		<jsInclude>res/js/tip.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="css"
+			title="CSS Style"
+			type="String"
+			bindable="true"/>
+		<property
+			id="offsetTop"
+			title="Offset: top"
+			type="float"
+			bindable="true"/>	
+		<property
+			id="Rows"
+			title="Rows:"
+			type="float"
+			bindable="true"/>
+		<property
+			id="Columns"
+			title="Columns:"
+			type="float"
+			bindable="true"/>
+		<property
+			id="Blocks"
+			title="Blocks:"
+			type="float"
+			bindable="true"/>
+		<property
+			id="Coloroff"
+			title="Color OFF:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="Coloron"
+			title="Color ON:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="labelcss"
+			title="Label: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onclick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<property
+			id="mouseover"
+			title="On Hover"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">200</defaultValue>
+			<defaultValue property="HEIGHT">100</defaultValue>
+			<defaultValue property="css">stroke:steelblue;stroke-width:1;fill:none;</defaultValue>
+			<defaultValue property="offsetTop">10</defaultValue>
+			<defaultValue property="Rows">15</defaultValue>
+			<defaultValue property="Columns">5</defaultValue>
+			<defaultValue property="Blocks">3</defaultValue>
+			<defaultValue property="Coloroff">rgb(255,255,255)</defaultValue>
+			<defaultValue property="Coloron">rgb(223,0,0)</defaultValue>
+			<defaultValue property="labelcss">1</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

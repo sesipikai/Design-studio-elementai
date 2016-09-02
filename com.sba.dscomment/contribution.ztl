@@ -1,0 +1,23 @@
+class com.sba.dscomment.DSComment extends Component {
+
+	/* Returns the current color of the box. */
+	String getColor() {*
+		return this.color;
+	*}
+
+	/* Sets the current color of the box. */
+	void setColor(/* New color */ String newColor) {*
+		this.color = newColor;
+	*}
+	
+	
+		/* Returns the current color of the box. */
+	String getOpacity() {*
+		return this.opacity;
+	*}
+
+	/* Sets the current color of the box. */
+	void setOpacity(/* New color */ String newColor) {*
+		this.opacity = newColor;
+	*}
+}

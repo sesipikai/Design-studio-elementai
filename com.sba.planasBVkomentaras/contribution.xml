@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.bvkomentaras"
+	title="bvkomentaras"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="BVkomentaras"
+		title="BVkomentras"
+		icon="res/bvkomentras.png"
+		handlerType="div"
+		modes="commons m"
+		databound="true">
+		<requireJs modes="commons m">res/js/bvkomentaras</requireJs>
+		<requireJs modes="commons m">res/js/common_databound</requireJs>
+		<requireJs modes="commons m">res/js/tip</requireJs>
+		<stdInclude kind="d3"/>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="menesis"
+			title="menesis"
+			type="String"
+			bindable="true"/>
+		<property
+			id="plant"
+			title="plant"
+			type="String"
+			bindable="true"/>
+		<property
+			id="grupe"
+			title="grupe"
+			type="String"
+			bindable="true"/>
+		<property
+			id="spalva"
+			title="spalva"
+			type="String"
+			bindable="true"/>
+		<property
+			id="artikulas"
+			title="artikulas"
+			type="String"
+			bindable="true"/>
+		<property
+			id="material"
+			title="material"
+			type="String"
+			bindable="true"/>
+		<property
+			id="kp"
+			title="material"
+			type="String"
+			bindable="true"/>
+		<property
+			id="kg"
+			title="material"
+			type="String"
+			bindable="true"/>
+		<property
+			id="triggerv"
+			title="Runs update, number"
+			type="float"
+			bindable="true"/>		
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">0</defaultValue>
+			<defaultValue property="TOP_MARGIN">0</defaultValue>
+			<defaultValue property="WIDTH">50</defaultValue>
+			<defaultValue property="HEIGHT">50</defaultValue>
+			<defaultValue property="triggerv">0</defaultValue>			
+		</initialization>
+	</component>
+</sdkExtension>

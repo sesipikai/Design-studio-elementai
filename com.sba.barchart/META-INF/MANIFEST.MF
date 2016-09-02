@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Bar char dual key figures
+Bundle-SymbolicName: com.sba.barchart;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: com.sap.ip.bi.zen.rt.components.sdk.eclipse
+Bundle-Vendor: SBA

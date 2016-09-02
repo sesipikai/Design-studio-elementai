@@ -1,0 +1,81 @@
+class com.sba.swtchart.Swtchart extends Component {
+	
+	/* Sets the Chart title. */
+	void setcharttitle(/* Header text */ String text) {*
+		this.charttitle = text;
+	*}
+
+	/* Use start end overwrite. */
+	void setstartoverwriteuse(boolean value) {*
+		this.startoverwriteuse = value;
+	*}		
+
+	/* Sets the start label. */
+	void setstartlabel(/* Start label text */ String text) {*
+		this.startlabel = text;
+	*}	
+	
+	/* Sets the end label. */
+	void setendlabel(/* End label text */ String text) {*
+		this.endlabel = text;
+	*}
+	
+	/* Sets the Faktas label. */
+	void setfaktaslabel(/* End label text */ String text) {*
+		this.faktaslabel = text;
+	*}
+	
+	/* Sets the Planas label. */
+	void setplanaslabel(/* End label text */ String text) {*
+		this.planaslabel = text;
+	*}
+	
+	/* Sets start value. */
+	void setstaroverwrite(/* Start value */ float number) {*
+		this.startoverwrite = number;
+	*}
+	
+	/* Sets end value. */
+	void setstarendwrite(/* end value */ float number) {*
+		this.endoverwrite = number;
+	*}
+	
+	/* Set Start Bar CSS. */
+	void setbarscssstart(/* Start Bar CSS set */ String text) {*
+		this.barscssstart = text;
+	*}
+	
+	/* Set End Bar CSS. */
+	void setbarscssend(/* Start Bar CSS set */ String text) {*
+		this.barscssend = text;
+	*}
+		/* Set xaxis d3 format. */
+	void setxaxisformat(/* Set xaxis d3 format */ String text) {*
+		this.d3xaxisformat = text;
+	*}
+	
+	/* Set yaxis d3 format. */
+	void setyaxisformat(/* Set yaxis d3 format */ String text) {*
+		this.d3yaxisformat = text;
+	*}
+	
+	/* Set data labels d3 format. */
+	void setdatalabelsformat(/* Set data labels d3 format */ String text) {*
+		this.datalabelsformat = text;
+	*}
+	
+	/* Set data labels start end format d3 format. */
+	void setdatalabelsseformat(/* Set data labels start end d3 format */ String text) {*
+		this.datalabelsformatse = text;
+	*}
+	
+	/* Warp labels. */
+	void setwarplabels(boolean value) {*
+		this.warplabels = value;
+	*}		
+	
+	
+	
+	
+   
+}

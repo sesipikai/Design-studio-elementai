@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.dscomment"
+	title="DScomment"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="DScomment"
+		title="DScomment"
+		icon="res/icon.png"
+		handlerType="div">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/dscomment.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="color"
+			title="Color"
+			type="Color"
+			group="Display"
+			bindable="true"/>
+		<property
+			id="opacity"
+			title="Opacity"
+			type="String"
+			group="Display"
+			bindable="true"/>
+		<property
+			id="onclick"
+			title="On Click"
+			type="ScriptText"
+			group="Events"/>
+		<property
+			id="mouseover"
+			title="On Hover"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>		
+			<defaultValue property="WIDTH">100</defaultValue>
+			<defaultValue property="HEIGHT">100</defaultValue>
+			<defaultValue property="color">red</defaultValue>
+			<defaultValue property="opacity">1</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

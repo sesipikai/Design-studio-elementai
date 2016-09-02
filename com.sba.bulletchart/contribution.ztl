@@ -1,0 +1,64 @@
+class com.sba.bulletchart.Bulletchart extends Component {
+	
+	/* Sets the Chart title. */
+	void setcharttitle(/* Header text */ String text) {*
+		this.charttitle = text;
+	*}	
+
+	/* Sets max scales. */
+	void setscalesone(/* Scales one */ float number) {*
+		this.scalesone = number;
+	*}	
+
+	/* Sets min scales. */
+	void setscalestwo(/* Scales two */ float number) {*
+		this.scalestwo = number;
+	*}
+
+	/* Sets Performance. */
+	void setperformance(/* Performance */ float number) {*
+		this.performance = number;
+	*}
+	
+	/* Sets target one. */
+	void settargetone(/* Target one */ float number) {*
+		this.targetone = number;
+	*}
+	
+	/* Sets target two. */
+	void settargettwo(/* Target two */ float number) {*
+		this.targettwo = number;
+	*}
+	
+	/* Sets target two visibility. */
+	void settargettwov(/* Target two */ boolean value) {*
+		this.targettwov = value;
+	*}
+	
+	/* Sets alert HTML. */
+	void setalerthtml(/* Alert html */ String value) {*
+		this.alerthtml = value;
+	*}
+	
+	/* Sets axis format. */
+		void setaxisformat(/* D3 format string */ String value) {*
+		this.axisformatbindable = value;
+	*}
+	
+	/* Sets alert CSS. */
+		void setalertcss(/* AXIS css string */ String value) {*
+		this.alertcss = value;
+	*}
+	
+	/* Sets axis max. */
+		void setaxismax(/* max */ float value) {*
+		this.axismax = value;
+	*}
+		/* Sets axis min. */
+		void setaxismin(/* min */ float value) {*
+		this.axismin = value;
+	*}
+	
+	
+   
+}

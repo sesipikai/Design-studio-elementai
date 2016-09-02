@@ -1,0 +1,57 @@
+class com.sba.calendar.Calendar extends Component {
+	
+	/* Set color min. */
+	void setcolormin(/* Color min */ String text) {*
+		this.colormin = text;
+	*}
+	
+	/* Set color max. */
+	void setcolormin(/* Color max */ String text) {*
+		this.colormax = text;
+	*}
+	
+	/* Set color middle. */
+	void setcolormin(/* Color middle */ String text) {*
+		this.colormiddle = text;
+	*}
+	
+	
+	/* Sets min */
+	void setvmin(/* Min */ float number) {*
+		this.vmin = number;
+	*}
+	
+		/* Sets max */
+	void setvmax(/* max */ float number) {*
+		this.vmax = number;
+	*}
+	
+		/* Sets middle */
+	void setvmiddle(/* middle */ float number) {*
+		this.vmiddle = number;
+	*}
+	
+			/* Sets Metai */
+	void setmetai(/* Metai */ float number) {*
+		this.metai = number;
+	*}
+	
+		/* Sets menesis */
+	void setmenesis(/* Menensis */ float number) {*
+		this.menindeksas = number;
+	*}
+	
+	/* Graziname pasirinkta reiksme */
+	String getselectedlabel() {*
+		return this.selectedlabel;
+	*}
+	/* Nustatome pasirinkta reiksme */
+	void setselectedlabel(/* Label */ String text) {*
+		this.selectedlabel = text;
+	*}
+	
+	
+	
+		
+   
+}

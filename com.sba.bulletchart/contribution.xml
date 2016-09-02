@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.bulletchart"
+	title="BulletChart"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Bulletchart"
+		title="Bulletchart"
+		icon="res/bulletchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<jsInclude>res/js/bulletchart.js</jsInclude>
+		<jsInclude>res/js/tip.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="alerton"
+			title="Alert on"
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="axiscss"
+			title="Axis css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="titlecss"
+			title="Title css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="title"
+			title="Title"
+			type="String"
+			bindable="true"/>
+		<property
+			id="titleon"
+			title="Title on"
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="titleheight"
+			title="Title height"
+			type="float"
+			bindable="true"/>
+		<property
+			id="scalesone"
+			title="Scales max"
+			type="float"
+			bindable="true"/>
+		<property
+			id="scalesonecss"
+			title="Scales one css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="scalestwo"
+			title="Scales min"
+			type="float"
+			bindable="true"/>
+		<property
+			id="scalestwocss"
+			title="Scales two css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="performancecss"
+			title="Performance css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="targetonecss"
+			title="Target one css"
+			type="String"
+			bindable="true"/>
+		<property
+			id="targetducss"
+			title="Target du CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="performance"
+			title="Performance"
+			type="float"
+			bindable="true"/>
+		<property
+			id="targetone"
+			title="Target one"
+			type="float"
+			bindable="true"/>
+		<property
+			id="targettwo"
+			title="Target two"
+			type="float"
+			bindable="true"/>
+		<property
+			id="targettwov"
+			title="Target two visable"
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="axismax"
+			title="Axis Max"
+			type="float"
+			bindable="true"/>
+		<property
+			id="axismin"
+			title="Axis Min"
+			type="float"
+			bindable="true"/>
+		<property
+			id="alerthtml"
+			title="Alert Html"
+			type="String"
+			bindable="true"/>
+		<property
+			id="alertcss"
+			title="Alert CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="axisformatbindable"
+			title="Axis d3 format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="showaxis"
+			title="Show axis"
+			type="boolean"
+			bindable="true"/>
+
+		<property
+			id="manualtargetwidht"
+			title="Manual targer widht"
+			type="float"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="scalesone">150</defaultValue>
+			<defaultValue property="titleheight">12</defaultValue>
+			<defaultValue property="axiscss">text_heading</defaultValue>
+			<defaultValue property="scalestwo">85</defaultValue>
+			<defaultValue property="performance">100</defaultValue>
+			<defaultValue property="targetone">90</defaultValue>
+			<defaultValue property="targettwo">120</defaultValue>
+			<defaultValue property="targettwov">true</defaultValue>
+			<defaultValue property="axismin">0</defaultValue>
+			<defaultValue property="axismax">200</defaultValue>
+			<defaultValue property="axisformatbindable">04d</defaultValue>
+			<defaultValue property="manualtargetwidht">0</defaultValue>
+			<defaultValue property="showaxis">true</defaultValue>
+			
+		</initialization>
+	</component>
+</sdkExtension>

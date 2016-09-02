@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.gantt"
+	title="Gantt chart"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Gantt"
+		title="Gantt chart"
+		icon="res/barchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<jsInclude>res/js/gantt.js</jsInclude>
+		<jsInclude>res/js/tip.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+
+		<property
+			id="pagaliukaivisible"
+			title="Pagaliukai: on/off"
+			type="boolean"/>
+		<property
+			id="barspalva"
+			title="Spalva:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="horizontallabelsize"
+			title="Label size:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="axislabelsize"
+			title="Axis label size"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">500</defaultValue>
+			<defaultValue property="HEIGHT">500</defaultValue>
+			<defaultValue property="pagaliukaivisible">true</defaultValue>
+			<defaultValue property="barspalva">rgb(102,201,215)</defaultValue>
+			<defaultValue property="horizontallabelsize">14px</defaultValue>
+			<defaultValue property="axislabelsize">10px</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

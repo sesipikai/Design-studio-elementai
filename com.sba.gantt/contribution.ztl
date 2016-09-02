@@ -1,0 +1,8 @@
+class com.sba.gantt.Gantt extends Component {
+	
+	/* Sets the Chart title. */
+	void setcharttitle(/* Header text */ String text) {*
+		this.charttitle = text;
+	*}	
+   
+}

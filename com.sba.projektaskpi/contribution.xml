@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.projektaskpi"
+	title="ProjektasKPI"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="ProjektasKPI"
+		title="ProjektasKPI"
+		icon="res/bulletchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/projektaskpi.js</jsInclude>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="Title"
+			title="Title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="BigBoxT"
+			title="Big box title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="BigBoxS"
+			title="Big box s: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SmallBox3T"
+			title="Small box 3 title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SmallBox3S"
+			title="Big box s: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SmallBoxVT"
+			title="Small box v title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SmallBoxVS"
+			title="Big box v: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SET"
+			title="SE title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="SES"
+			title="SES: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="Title">titles</defaultValue>
+			<defaultValue property="BigBoxT">big_box_ts</defaultValue>
+			<defaultValue property="BigBoxS">big_box_ss</defaultValue>
+			<defaultValue property="SmallBox3T">small_box_3_ts</defaultValue>
+			<defaultValue property="SmallBox3S">small_box_3_ss</defaultValue>
+			<defaultValue property="SmallBoxVT">small_box_v_ts</defaultValue>
+			<defaultValue property="SmallBoxVS">small_box_v_ss</defaultValue>
+			<defaultValue property="SET">se_ts</defaultValue>
+			<defaultValue property="SES">se_ss</defaultValue>
+			<defaultValue property="WIDTH">800</defaultValue>
+			<defaultValue property="HEIGHT">1600</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.calendar"
+	title="Calendar"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Calendar"
+		title="Calendar"
+		icon="res/calendar.png"
+		handlerType="div"
+		modes="commons m"
+		databound="true">
+		<requireJs modes="commons m">res/js/calendar</requireJs>
+		<requireJs modes="commons m">res/js/common_databound</requireJs>
+		<requireJs modes="commons m">res/js/tip</requireJs>
+		<stdInclude kind="d3"/>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="colormin"
+			title="Color: min"
+			type="String"
+			bindable="true"/>			
+		<property
+			id="colormax"
+			title="Color: max"
+			type="String"
+			bindable="true"/>
+		<property
+			id="colormiddle"
+			title="Color: middle"
+			type="String"
+			bindable="true"/>
+		<property
+			id="vmin"
+			title="Min"
+			type="float"
+			bindable="true"/>
+		<property
+			id="vmax"
+			title="Max"
+			type="float"
+			bindable="true"/>	
+		<property
+			id="vmiddle"
+			title="Middle"
+			type="float"
+			bindable="true"/>
+		<property
+			id="useautorange"
+			title="Auto color range"
+			type="boolean"/>
+		<property
+			id="usecurrentmonth"
+			title="Use current month"
+			type="boolean"/>
+		<property
+			id="metai"
+			title="Metai"
+			type="float"
+			bindable="true"/>
+		<property
+			id="menindeksas"
+			title="Menesis"
+			type="float"
+			bindable="true"/>
+		<property
+			id="selectedlabel"
+			title="Kas pasrinkta"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">100</defaultValue>
+			<defaultValue property="HEIGHT">100</defaultValue>
+			<defaultValue property="colormin">red</defaultValue>
+			<defaultValue property="colormax">green</defaultValue>
+			<defaultValue property="colormiddle">white</defaultValue>
+			<defaultValue property="vmin">0</defaultValue>
+			<defaultValue property="vmax">100</defaultValue>
+			<defaultValue property="vmiddle">50</defaultValue>
+			<defaultValue property="useautorange">true</defaultValue>
+			<defaultValue property="usecurrentmonth">true</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>
