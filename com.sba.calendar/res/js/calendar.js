@@ -142,6 +142,7 @@ Component.subclass("com.sba.calendar.Calendar", function() {
 			pirma_diena = 7;
 		}
 		//alert(Metai + "-" + Menindeksas +"-"+" "+men_dienu_sk+"/"+pirma_diena);
+		//sedi gite
 	};
 	
 	this.precalc = function(vwidth,vheight) {
