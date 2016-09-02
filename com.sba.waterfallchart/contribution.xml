@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sba.waterfallchart"
+	title="WaterfallChart"
+	version="1.0"
+	vendor="SBA">
+	<component
+		id="Waterfallchart"
+		title="Waterfallchart"
+		icon="res/waterfallchart.png"
+		handlerType="div"
+		databound="true">
+		<stdInclude kind="d3"/>
+		<jsInclude>res/js/common_databound.js</jsInclude>
+		<jsInclude>res/js/waterfallchart.js</jsInclude>
+		<jsInclude>res/js/tip.js</jsInclude>
+		<cssInclude>res/css/component.css</cssInclude>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultSet"
+			group="DataBinding"/>
+		<property
+			id="css"
+			title="CSS Style"
+			type="String"
+			bindable="true"/>
+		<property
+			id="xoffsetmanualleft"
+			title="X Offset: left"
+			type="float"
+			bindable="true"/>
+		<property
+			id="xoffsetmanualright"
+			title="X Offset: right"
+			type="float"
+			bindable="true"/>
+		<property
+			id="yoffsetmanualtop"
+			title="Y Offset: top"
+			type="float"
+			bindable="true"/>	
+		<property
+			id="yoffsetmanualbottom"
+			title="Y Offset: bottom"
+			type="float"
+			bindable="true"/>
+		<property
+			id="charttitlevisible"
+			title="Chart title: Visible"
+			type="boolean"/>
+		<property
+			id="charttitle"
+			title="Chart title:"
+			type="String"
+			bindable="true"/>
+		<property
+			id="charttitlecss"
+			title="Chart title: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="d3xaxisformat"
+			title="Axis: X Axis format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="d3yaxisformat"
+			title="Axis: Y Axis format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="labelcss"
+			title="Label: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="startlabel"
+			title="Start: label"
+			type="String"
+			bindable="true"/>
+		<property
+			id="endlabel"
+			title="End: Label"
+			type="String"
+			bindable="true"/>
+		<property
+			id="faktaslabel"
+			title="Label: Faktas"
+			type="String"
+			bindable="true"/>
+			
+		<property
+			id="planaslabel"
+			title="Label: Planas"
+			type="String"
+			bindable="true"/>
+		<property
+			id="startoverwriteuse"
+			title="Use start overwrite"
+			type="boolean"/>
+		<property
+			id="startoverwrite"
+			title="Start: new value"
+			type="float"
+			bindable="true"/>
+		<property
+			id="endoverwrite"
+			title="End: new value"
+			type="float"
+			bindable="true"/>
+		<property
+			id="usebalansing"
+			title="Balansing column: Visible"
+			type="boolean"/>
+		<property
+			id="balansingcolumnlabel"
+			title="Balansing column: Label"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssstart"
+			title="Bars: Start CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssend"
+			title="Bars: End CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssplus"
+			title="Bars: Plus CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="barscssminus"
+			title="Bars: Minus CSS"
+			type="String"
+			bindable="true"/>	
+					
+		<property
+			id="datalabelsvisible"
+			title="Data labels: Visible"
+			type="boolean"/>
+		<property
+			id="datalabelscss"
+			title="Label: CSS"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsformat"
+			title="Label: Num. format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsformatse"
+			title="Label: Num. se format"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsscaling"
+			title="Label: scaling"
+			type="float"
+			bindable="true"/>
+		<property
+			id="datalabelssuffix"
+			title="Label: suffix"
+			type="String"
+			bindable="true"/>
+		<property
+			id="datalabelsxOffset"
+			title="Label: Xoffset"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">500</defaultValue>
+			<defaultValue property="HEIGHT">500</defaultValue>
+			<defaultValue property="css">stroke:steelblue;stroke-width:1;fill:none;</defaultValue>
+			<defaultValue property="charttitlevisible">true</defaultValue>
+			<defaultValue property="charttitle">Barchart</defaultValue>
+			<defaultValue property="charttitlecss"></defaultValue>
+			<defaultValue property="labelcss"></defaultValue>
+			<defaultValue property="startlabel">START</defaultValue>
+			<defaultValue property="endlabel">END</defaultValue>
+			<defaultValue property="startoverwriteuse">false</defaultValue>
+			<defaultValue property="startoverwrite">0</defaultValue>
+			<defaultValue property="endoverwrite">0</defaultValue>
+			<defaultValue property="usebalansing">false</defaultValue>
+			<defaultValue property="balansingcolumnlabel">Others</defaultValue>
+			<defaultValue property="barscssstart">fill:rgb(53,126,161)</defaultValue>
+			<defaultValue property="barscssend">fill:rgb(53,126,161)</defaultValue>
+			<defaultValue property="barscssplus">fill:rgb(103,185,75)</defaultValue>
+			<defaultValue property="barscssminus">fill:rgb(223,0,0)</defaultValue>
+			<defaultValue property="datalabelsvisible">false</defaultValue>
+			<defaultValue property="datalabelscss"></defaultValue>
+			<defaultValue property="datalabelsscaling">1</defaultValue>
+			<defaultValue property="datalabelsformat">,.0f</defaultValue>
+			<defaultValue property="datalabelsformatse">,.0f</defaultValue>
+			<defaultValue property="datalabelssuffix"></defaultValue>
+			<defaultValue property="datalabelsxOffset">0.35em</defaultValue>
+			<defaultValue property="d3xaxisformat">.2s</defaultValue>
+			<defaultValue property="d3yaxisformat">.2s</defaultValue>
+			<defaultValue property="xoffsetmanualleft">0</defaultValue>
+			<defaultValue property="xoffsetmanualright">5</defaultValue>
+			<defaultValue property="yoffsetmanualtop">0</defaultValue>
+			<defaultValue property="yoffsetmanualbottom">0</defaultValue>
+			<defaultValue property="faktaslabel">Faktas</defaultValue>
+			<defaultValue property="planaslabel">Planas</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>
