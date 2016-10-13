@@ -27,6 +27,11 @@
 			type="boolean"
 			bindable="true"/>
 		<property
+			id="burbulasproc"
+			title="Alert size"
+			type="float"
+			bindable="true"/>
+		<property
 			id="axiscss"
 			title="Axis css"
 			type="String"
@@ -50,6 +55,11 @@
 			id="titleheight"
 			title="Title height"
 			type="float"
+			bindable="true"/>
+		<property
+			id="titlefontsize"
+			title="Title font size"
+			type="String"
 			bindable="true"/>
 		<property
 			id="scalesone"
@@ -77,6 +87,11 @@
 			type="String"
 			bindable="true"/>
 		<property
+			id="perfproc"
+			title="Performance size"
+			type="float"
+			bindable="true"/>
+		<property
 			id="targetonecss"
 			title="Target one css"
 			type="String"
@@ -85,6 +100,11 @@
 			id="targetducss"
 			title="Target du CSS"
 			type="String"
+			bindable="true"/>
+		<property
+			id="targetproc"
+			title="Target size"
+			type="float"
 			bindable="true"/>
 		<property
 			id="performance"
@@ -148,19 +168,32 @@
 			type="ScriptText"
 			group="Events"/>
 		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">100</defaultValue>
+			<defaultValue property="HEIGHT">50</defaultValue>
 			<defaultValue property="scalesone">150</defaultValue>
 			<defaultValue property="titleheight">12</defaultValue>
+			<defaultValue property="titlefontsieze">12</defaultValue>
 			<defaultValue property="axiscss">text_heading</defaultValue>
 			<defaultValue property="scalestwo">85</defaultValue>
 			<defaultValue property="performance">100</defaultValue>
-			<defaultValue property="targetone">90</defaultValue>
-			<defaultValue property="targettwo">120</defaultValue>
+			<defaultValue property="perfproc">0.4</defaultValue>
+			<defaultValue property="targetone">140</defaultValue>
+			<defaultValue property="targettwo">130</defaultValue>
 			<defaultValue property="targettwov">true</defaultValue>
+			<defaultValue property="targetproc">0.8</defaultValue>
+			<defaultValue property="burbulasproc">0.6</defaultValue>
 			<defaultValue property="axismin">0</defaultValue>
 			<defaultValue property="axismax">200</defaultValue>
-			<defaultValue property="axisformatbindable">04d</defaultValue>
+			<defaultValue property="axisformatbindable">s</defaultValue>
 			<defaultValue property="manualtargetwidht">0</defaultValue>
 			<defaultValue property="showaxis">true</defaultValue>
+			<defaultValue property="scalesonecss">scale_one</defaultValue>
+			<defaultValue property="scalestwocss">scale_two</defaultValue>
+			<defaultValue property="performancecss">performance</defaultValue>
+			<defaultValue property="targetonecss">target_one</defaultValue>
+			<defaultValue property="targettwocss">target_two</defaultValue>
 			
 		</initialization>
 	</component>

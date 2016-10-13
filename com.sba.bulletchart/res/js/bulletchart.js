@@ -2,6 +2,7 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 	
 	var that = this;
 	var canvas = undefined;
+	var remove;
 	var chart_ID = "";
 	var axis_max;
 	var axis_min;
@@ -18,27 +19,78 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 	var show_axis;
 	var axis_format_bindable;
 	
+	var x_offset;
+	var y_offset;
+	var a_height;
+	var axis_size = 20;
+	var scale_size;
+	var performance_size;
+	var target_size;
+	var x;
+	var perf_proc; //bindable
+	var target_proc; //bindable
+	var burbulas_size;
+	var burbulas_proc;
+	var bc_axis;
+	var axis_format;
+	var title_font_size;
+	
+	this._poller = null;
+	this._pollInterval = 250;
+	this._previosWidth = -1;
+	this._previousHeight = -1;
+	this._naudojamas_ugis = 100;
+	this._naudojamas_plotis = 100;
+	
+	this.measureSize = function(that) {
+		var currentWidth = that.$().innerWidth();
+		var currentHeight = that.$().innerHeight();
+		if(currentWidth != that._previousWidth || currentHeight != that._previousHeight){
+			// If width or height has changed since the last calculation, redraw.
+					// Debug alert:
+					//alert("Resize detected.\n\nOld:" + that._previousWidth + " x " + that._previousHeight + 
+					//		"\n\nNew:" + currentWidth + " x " + currentHeight);
+					//
+			that._previousHeight = currentHeight;
+			that._previousWidth = currentWidth;	
+			that._naudojamas_ugis = currentHeight;
+			that._naudojamas_plotis = currentWidth;	
+			this.drawBulletChart();
+		}else{
+			// Sizes are the same.  Don't redraw, but poll again after an interval.
+			that._poller = window.setTimeout(function(){that.measureSize(that)},that._pollInterval);	
+		}	
+	};
+	
+	
+	
 	this.init = function() {
 		var container = this.$()[0];
 		chart_ID = "id"+Math.random();
-		canvas = d3.select(container).append("svg:svg").attr("id","id"+chart_ID.substring(4, 20)).attr("width", "100%").attr("height", "100%").append("g");
+		//canvas = d3.select(container).append("svg:svg").attr("id","id"+chart_ID.substring(4, 20)).attr("width", "100%").attr("height", "100%").append("g");
 	};
 
 	this.afterUpdate = function() {
-		drawBulletChart();
+		this.drawBulletChart();
 	};
 
-	function drawBulletChart(){
+	this.drawBulletChart = function(){
 		if(true) { //jei turim duomenu
 			
-			var remove = d3.select("#id"+chart_ID.substring(4, 20)).remove();
-			canvas = d3.select(that.$()[0]).append("svg:svg").attr("id","id"+chart_ID.substring(4, 20)).attr("width", "100%").attr("height", "100%").append("g");
-			var width = that.$().outerWidth(true);
-			var height = that.$().outerHeight(true);	
-			var a_height = height*0.95; 
-			var a_width = width;
-			var x_offset = 0; 
-			var y_offset = 0;
+			remove = d3.select("#id"+chart_ID.substring(4, 20)).remove();
+			canvas = d3.select(that.$()[0]).append("svg:svg")
+						.attr("id","id"+chart_ID.substring(4, 20))
+						.attr("width", that._naudojamas_plotis)
+						.attr("height", that._naudojamas_ugis)
+						.append("g");
+			
+			canvas.transition().duration(250);
+			//alert(""+that._naudojamas_plotis + " / " + that._naudojamas_ugis);
+			width = that._naudojamas_plotis;
+			height = that._naudojamas_ugis;
+			
+			x_offset = 0; 
+			y_offset = 0;
 
 	
 			var noS = 2; //bindable
@@ -47,54 +99,52 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 			var scale_fill = [scales_one_css, scales_two_css]; //bindable
 			//var targets_css = [target_one_css, target_two_css]; //bindable
 			var labels = ["Pardavimai"]; //bindable
-			var perf_proc = 0.4; //bindable
-			var target_proc = 0.8; //bindable
-			
-			if (alert_on == true) {
-				x_offset = a_width*0.085;
-				a_width = a_width*0.9;
-			} else {
-				x_offset = a_width*0.025;
-				a_width = a_width*0.95;
-			}
-		
-			
+
+			a_height = height;
+			a_width = width;
 			if (title_on == true){
-				a_height = a_height-title_height;
+				a_height = height-title_height;
 				y_offset = title_height;
 			}
 			
 			if( show_axis == true) {
-				a_height = a_height*0.75;
-			}		
+				a_height = a_height-axis_size;
+			}	
 			
-			var x = d3.scale.linear()
+			scale_size = a_height;
+			performance_size = a_height*perf_proc;
+			target_size = a_height*target_proc;
+			burbulas_size = a_height*burbulas_proc;
+			
+			if (alert_on == true) {
+				x_offset = a_height;
+				a_width = width-a_height;
+			} else {
+				x_offset = 5;
+				a_width = width;
+			}
+			
+			x = d3.scale.linear()
 						.domain([axis_min, axis_max])
-						.range([0, a_width]);	
+						.range([0, a_width-15]).nice();	
 			
 				
-			var scale_size = a_height;
-			var performance_size = a_height*perf_proc;
-			var target_size = a_height*target_proc;
-			
 			var tip = d3.tip()
-			.attr('class', 'd3-tip')
-			.offset([-10, 0])
-			.html(alert_html);
+				.attr('class', 'd3-tip')
+				.offset([-10, 0])
+				.html(alert_html);
 
 
 			if (alert_on == true){
 					canvas.append("circle")
 									.attr("class", alert_css)
-									.attr("cx", target_size/2.5)
-									.attr("cy", scale_size/2)
+									.attr("cx", a_height/2)
+									.attr("cy", a_height/2)
 									.attr("transform", "translate(0,"+y_offset+")")
 									.attr("class", alert_css)
 									.on('mouseover', tip.show)
 									.on('mouseout', tip.hide)
-									.attr("r",target_size/2.5);
-					
-					x_offset = target_size/1.25+target_size/5;
+									.attr("r",burbulas_size/2);
 			}
 			
 			//scales
@@ -122,7 +172,7 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 			
 					canvas.append("rect")
 								.attr("class", target_one_css)
-								.attr("width", a_width*0.005+manual_target_widht)
+								.attr("width", 2+manual_target_widht)
 								.attr("height", target_size)
 								.attr("y", (1-target_proc)/2*a_height)
 								.attr("transform", "translate("+x_offset+","+y_offset+")")
@@ -133,7 +183,7 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 			if (target_two_v == true) {		
 					canvas.append("rect")
 								.attr("class", target_du_css)
-								.attr("width", a_width*0.005+manual_target_widht)
+								.attr("width", 2+manual_target_widht)
 								.attr("height", target_size)
 								.attr("y", (1-target_proc)/2*a_height)
 								.attr("transform", "translate("+x_offset+","+y_offset+")")
@@ -160,46 +210,26 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 						.attr("x", x(PTT[0]));
 			}
 								
-			//ticks
 			if(show_axis == true) {
-				var domain_div = (Math.abs(axis_min)+Math.abs(axis_max))/4;
-				for (var i = 0; i <= 4; i++) {	
-						canvas.append("rect")
-									.attr("fill", "black")
-									.attr("width", a_width*0.001)
-									.attr("height", scale_size*0.05)
-									.attr("y", scale_size)
-									.attr("transform", "translate("+x_offset+","+y_offset+")")
-									.attr("x", x(axis_min+domain_div*i-axis_max*0.0005));
-				}
-			
-				//axis_text
+				axis_format = d3.format(axis_format_bindable);
+				bc_Xaxis = d3.svg.axis()
+					.ticks(5)
+					.tickFormat(function(d) {return axis_format(d);})
+					.scale(x);
+				canvas.append("g")
+					.attr("class", "bc_axis")
+					.call(bc_Xaxis)
+					.attr("transform", "translate("+x_offset+","+(height-axis_size)+")");
 				
-				var font_size = height-y_offset-a_height-scale_size*0.05;
-				
-				//axis_format
-				
-				var axis_format = d3.format(axis_format_bindable);
-				
-				for (var i = 0; i <= 4; i++) {	
-						canvas.append("text")
-									.attr("y", scale_size*1.05)
-									.attr("x", x(axis_min+domain_div*i-axis_max*0.0005))
-									.attr("text-anchor", "middle")
-									.attr("dy", font_size)
-									.attr("class",axis_css)
-									.attr("font-size", font_size+"px")
-									.attr("transform", "translate("+x_offset+","+y_offset+")")
-									.text(axis_format(Math.round(axis_min+domain_div*i)));
-				}
 			}
 			
 			if(title_on == true) {
 					canvas.append("text")
-								.attr("class", title_css)
+								.attr("class", "text_title")
+								.attr("font-size",title_font_size+"px")
 								.attr("y", 0)
 								.attr("x", x(0))
-								.attr("dy", 18)
+								.attr("dy", title_font_size)
 								.attr("text-anchor", "start")
 								.attr("transform", "translate("+x_offset+",0)")
 								.text(Title);
@@ -207,11 +237,9 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 			
 			canvas.call(tip);
 			
-			
-			
-		
+			this._poller = window.setTimeout(function(){that.measureSize(that)},that._pollInterval);		
 		}
-	}
+	};
 
 	this.data = function(value) {
 		if (value === undefined) {
@@ -348,6 +376,15 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 		}
 	};
 	
+	this.titlefontsize = function(value) {
+		if (value === undefined) {
+			return title_font_size;
+		} else {
+			title_font_size = value;
+			return this;
+		}
+	};
+	
 	this.scalesonecss = function(value) {
 		if (value === undefined) {
 			return scales_one_css;
@@ -402,6 +439,30 @@ sap.designstudio.sdk.Component.subclass("com.sba.bulletchart.Bulletchart", funct
 		}
 	};
 
+	this.perfproc = function(value) {
+		if (value === undefined) {
+			return perf_proc;
+		} else {
+			perf_proc = value;
+			return this;
+		}
+	};
+	this.targetproc = function(value) {
+		if (value === undefined) {
+			return target_proc;
+		} else {
+			target_proc = value;
+			return this;
+		}
+	};
+	this.burbulasproc = function(value) {
+		if (value === undefined) {
+			return burbulas_proc;
+		} else {
+			burbulas_proc = value;
+			return this;
+		}
+	};
 	
 	this.alerthtml = function(value) {
 		if (value === undefined) {
